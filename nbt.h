@@ -24,8 +24,8 @@ void TAG_End(gzFile nbt, int16_t *ident){
 		id--;
 	}
 	*ident = id;
-	//printf("TAG_END\n");
-	printf("}\n");
+	printf("TAG_END\n");
+	//printf("}\n");
 }
 
 void TAG_Compound(gzFile nbt,int16_t *ident, int8_t named){
@@ -41,24 +41,24 @@ void TAG_Compound(gzFile nbt,int16_t *ident, int8_t named){
 			char tagname[tag_name_length];
 			//fread(&tagname,sizeof(tagname),1,nbt);
 			gzread(nbt,&tagname,sizeof(tagname));
-			//printf("TAG_Compound(\"");
-			printf("\"");
+			printf("TAG_Compound(\"");
+			//printf("\"");
 			for(int i = 0; i < sizeof(tagname); i++){
 				putchar(tagname[i]);
 			}
-			printf("\"{\n");
-			//printf("\")\n");
+			//printf("\"{\n");
+			printf("\"):\n");
 		}else{
 			//printf("TAG_Compound(\"%s\"){\n",argv[1]);
-			//printf("TAG_Compound(\"\"){\n");
-			printf("\"\"{\n");
+			printf("TAG_Compound(\"\"):\n");
+			//printf("\"\"{\n");
 		}
 	}else{
 		int16_t id = *ident;
 		id++;
 		*ident = id;
-		//printf("TAG_Compound(\"\"):\n");
-		printf("\"\"{\n");
+		printf("TAG_Compound(\"\"):\n");
+		//printf("\"\"{\n");
 		int8_t tag;
 		putchar(SEPERATOR);
 		//fread(&tag,sizeof(tag),1,nbt);
