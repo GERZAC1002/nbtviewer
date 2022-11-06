@@ -5,8 +5,6 @@
 #include "nbt.h"
 
 int main(int argc, char* argv[]){
-
-	int32_t header;
 	gzFile nbt;
 	uint8_t c;
 	int16_t ident = 0;

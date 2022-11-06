@@ -1,5 +1,7 @@
+CC=cc
+
 nbtviewer:
-	gcc nbtviewer.c -o nbtviewer.run -lz
+	$(CC) nbtviewer.c -o nbtviewer.run -lz -Wall
 
 install:
 	cp nbtviewer.run /usr/local/bin
