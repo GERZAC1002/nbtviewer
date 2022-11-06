@@ -7,5 +7,4 @@ extern void TAG_End(gzFile nbt, int16_t *ident){
 	}
 	*ident = id;
 	printf("TAG_END\n");
-	//printf("}\n");
 }
